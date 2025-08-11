@@ -1,0 +1,19 @@
+<h1>高校サッカー</h1>
+<h3>guide</h3>
+<%= link_to "新規投稿へ", new_tweet_path %>
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+<div class="top">
+
+    <div class="toplink">
+
+        <p><%= link_to "トップページ", tweets_top_path %></p>
+        <p><%= link_to "スケジュール", tweets_schedule_path %></p>
+        <p><%= link_to "注目高校・選手一覧", tweets_star_path %></p>
+        <p><%= link_to "おすすめの見方", tweets_recommend_path %></p>
+        <p><%= link_to "プレー集", tweets_path %></p>
+    </div>
+    <div class="topimg">
+    </div>
+</div>

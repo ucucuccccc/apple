@@ -1,0 +1,34 @@
+<h1>高校サッカー観戦ガイド</h1>
+<h3>新規高校サッカー観戦ガイド</h3>
+<%= form_for @高校サッカー観戦ガイド do |f| %>
+
+  <div class="field">
+    <%= f.label :項目名 %>
+    <%= f.text_field :カラム名, :size => 30 %>
+  </div>
+
+# データ型がstringで選択式の入力フォーム
+  <div class="field">
+    <%= f.label :項目名  %>
+    <%= f.select :name, 
+    [["A", "A"], 
+    ["B", "B"], 
+    ["C", "C"]], include_blank: "選択して下さい" %>
+  </div>
+
+  # データ型がtextで自由記述の入力フォーム
+  <div class="field">
+    <%= f.label :項目名  %>
+    <%= f.text_area :member, :size => "30x2" %>
+  </div>
+
+# データ型がtextで自由記述の入力フォーム
+  <div class="field">
+    <%= f.label :項目名  %>
+    <%= f.text_area :record, :size => "30x2" %>
+  </div>
+
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", tweets_path %>
