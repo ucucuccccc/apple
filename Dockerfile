@@ -19,8 +19,14 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git pkg-config libpq-dev libyaml-dev && \
-
+    apt-get install --no-install-recommends -y \
+        apt-transport-https \
+        ca-certificates \
+        build-essential \
+        git \
+        pkg-config \
+        libpq-dev \
+        libyaml-dev && \
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
